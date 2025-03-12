@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Chance" />
     <meta name="author" content="ClaPat Studio">
-    <meta charset="UTF-8" />    
+    <meta charset="UTF-8" />
     <link rel="icon" type="image/ico" href="favicon.ico" />
     <link href="style.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">  
-   
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+
 </head>
 <body class="hidden hidden-ball smooth-scroll scale-title">
-	<main>		
+
+	<main>
         <!-- Preloader -->
         <div class="preloader-wrap">
             <div class="outer">
@@ -23,14 +24,17 @@
                     <div class="percentage" id="precent"></div>
                     <div class="trackbar">
                         <div class="loadbar"></div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
-        <!--/Preloader -->  
-        
+        <!--/Preloader -->
+        <audio id="backgroundMusic" loop muted autoplay>
+            <source src="images/background.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
         <div class="cd-index cd-main-content">
-    
+
         <!-- Page Content -->
         <div id="page-content" class="light-content">
 
@@ -47,6 +51,10 @@
                 </div>
             </header>
             <!--/Header -->
+            <audio autoplay loop>
+                <source src="images/background.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
 
 
             <!-- Content Scroll -->
@@ -54,14 +62,14 @@
 
 
                 <!-- Main -->
-                <div id="main">  
+                <div id="main">
                     <!-- Main Content -->
                     <div id="main-content">
 
 
 
                         <!-- Showcase Holder -->
-                        <div id="showcase-holder"> 
+                        <div id="showcase-holder">
                             <div id="showcase-holder-wrap">
                                 <div id="showcase-tilt-wrap">
                                     <div id="showcase-tilt">
@@ -76,7 +84,7 @@
                                                                     <source src="./images/1.mp4" type="video/mp4">
                                                                 </video>
                                                             </div>
-                                                        </div>                                            
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- Section Slide -->
@@ -91,45 +99,56 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="swiper-slide" data-title="Join Movement" data-subtitle="Or Die Trying">
+                                                    <div class="img-mask">
+                                                        <div class="section-image" data-src="images/04hero.jpg">
+                                                            <div class="hero-video-wrapper">
+                                                                <video loop muted class="bgvid">
+                                                                    <source src="./images/2.mp4" type="video/mp4">
+                                                                </video>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                            </div>                                  
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                                                      
-                            <div class="showcase-captions-wrap">                                
+
+
+                            <div class="showcase-captions-wrap">
                                 <div class="showcase-captions"></div>
-                            </div>                                 
-                        </div>    
+                            </div>
+                        </div>
                         <!-- Showcase Holder -->
-                        
-                                
+
+
                     </div>
-                    <!--/Main Content --> 
+                    <!--/Main Content -->
                 </div>
                 <!--/Main -->
-                
-                
+
+
             </div>
             <!--/Content Scroll -->
-            
-            
+
+
             <!-- Footer -->
-            <footer class="fixed">        	
+            <footer class="fixed">
                 <div id="footer-container">
-                    
+
                     <div class="arrows-wrap">
                         <div class="prev-wrap parallax-wrap"><div class="swiper-button-prev swiper-button-white parallax-element"></div></div>
                         <div class="next-wrap parallax-wrap"><div class="swiper-button-next swiper-button-white parallax-element"></div></div>
                     </div>
-                    
+
                     <div class="footer-middle">
                    		<div class="showcase-subtitles-wrap"></div>
                     </div>
-                    
-                    <div class="socials-wrap">            	
+
+                    <div class="socials-wrap">
                         <div class="socials-icon"><i class="fa fa-share-alt" aria-hidden="true"></i></div>
                         <div class="socials-text">Follow us</div>
                         <ul class="socials">
@@ -137,22 +156,22 @@
                             <li><span class="parallax-wrap"><a class="parallax-element" href="https://www.dribbble.com/clapat" target="_blank">TG</a></span></li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </footer>
             <!--/Footer -->
-        
-        
-           
-        </div>    
+
+
+
+        </div>
         <!--/Page Content -->
-    
+
 		</div>
 	</main>
-    
-    
-    
-    
+
+
+
+
     <div class="cd-cover-layer"></div>
     <div id="magic-cursor">
         <div id="ball">
@@ -162,8 +181,7 @@
     </div>
     <div id="clone-image"></div>
     <div id="rotate-device"></div>
-    
-		
+
     <script src="js/jquery.min.js"></script>
     <script src="/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
     <script src="./ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js" ></script>
@@ -171,7 +189,14 @@
 	<script src="js/plugins.js"></script>
     <script src="js/scripts.js"></script>
 
+    <script>
+        const audio = document.getElementById('backgroundMusic');
 
+        // Unmute the audio after a short delay
+        setTimeout(() => {
+            audio.muted = false;
+        }, 1000); // 1 second delay
+    </script>
 
 </body>
 </html>
