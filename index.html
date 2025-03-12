@@ -14,6 +14,10 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
 
 </head>
+<audio id="background-audio" loop muted autoplay>
+    <source src="background.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
 <body class="hidden hidden-ball smooth-scroll scale-title">
 
 	<main>
@@ -29,10 +33,8 @@
             </div>
         </div>
         <!--/Preloader -->
-        <audio id="backgroundMusic" loop muted autoplay>
-            <source src="images/background.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
+
+
         <div class="cd-index cd-main-content">
 
         <!-- Page Content -->
@@ -48,13 +50,19 @@
                         <img class="white-logo" src="images/logo-white.png" alt="ClaPat Logo">
                     </a>
                 </div>
+                    <div class="button-wrap right menu">
+                        <div class="button-text">
+                            <a href="https://dexscreener.com/solana/9bbjhccoz2vgwhslzn9onub7i2j6bbwq8lxye7tnq3yn" target="_blank" data-hover="Menu">Dexscreener</a>
+                        </div>
+                        <div class="button-text">
+                            <a href="https://www.dextools.io/app/en/solana/pair-explorer/9bBJhCCoZ2vgwhSLZn9onUb7i2J6BBwQ8LXYE7tNq3yn?t=1741748742935" target="_blank" data-hover="Menu">DexTools</a>
+                        </div>
+                    </div>
+
                 </div>
             </header>
             <!--/Header -->
-            <audio autoplay loop>
-                <source src="images/background.mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
+
 
 
             <!-- Content Scroll -->
@@ -99,17 +107,17 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="swiper-slide" data-title="Join Movement" data-subtitle="Or Die Trying">
+                                                <div class="swiper-slide" data-title="550M of supply left" data-subtitle="Another 292M left for community decision">
                                                     <div class="img-mask">
                                                         <div class="section-image" data-src="images/04hero.jpg">
                                                             <div class="hero-video-wrapper">
                                                                 <video loop muted class="bgvid">
-                                                                    <source src="./images/2.mp4" type="video/mp4">
+                                                                    <source src="./images/3.mp4" type="video/mp4">
                                                                 </video>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                    <div class="button-text"><span data-hover="Menu">Menu</span></div>                                                </div>
 
                                             </div>
                                         </div>
@@ -152,8 +160,8 @@
                         <div class="socials-icon"><i class="fa fa-share-alt" aria-hidden="true"></i></div>
                         <div class="socials-text">Follow us</div>
                         <ul class="socials">
-                            <li><span class="parallax-wrap"><a class="parallax-element" href="https://www.dribbble.com/clapat" target="_blank">X</a></span></li>
-                            <li><span class="parallax-wrap"><a class="parallax-element" href="https://www.dribbble.com/clapat" target="_blank">TG</a></span></li>
+                            <li><span class="parallax-wrap"><a class="parallax-element" href="https://x.com/ChanceCTO" target="_blank">X</a></span></li>
+                            <li><span class="parallax-wrap"><a class="parallax-element" href="https://t.me/lastchancecoinsol" target="_blank">TG</a></span></li>
                         </ul>
                     </div>
 
@@ -190,12 +198,12 @@
     <script src="js/scripts.js"></script>
 
     <script>
-        const audio = document.getElementById('backgroundMusic');
-
-        // Unmute the audio after a short delay
-        setTimeout(() => {
-            audio.muted = false;
-        }, 1000); // 1 second delay
+        // Wait for a user interaction (like a click anywhere on the page) to unmute the audio
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('background-audio');
+            audio.muted = false; // Unmute the audio
+            audio.play(); // Start playing
+        });
     </script>
 
 </body>
